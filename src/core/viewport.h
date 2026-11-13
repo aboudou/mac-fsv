@@ -1,0 +1,50 @@
+/* viewport.h */
+
+/* Viewport routines */
+
+/* fsv - 3D File System Visualizer
+ * Copyright (C)1999 Daniel Richard G. <skunk@mit.edu>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+
+#ifdef FSV_VIEWPORT_H
+	#error
+#endif
+#define FSV_VIEWPORT_H
+
+
+/* mac-fsv: viewport events (formerly GDK events) */
+typedef enum {
+	VIEWPORT_BUTTON_PRESS,
+	VIEWPORT_BUTTON_RELEASE,
+	VIEWPORT_MOTION,
+	VIEWPORT_LEAVE
+} ViewportEventType;
+
+/* Modifier/button state masks */
+#define VIEWPORT_CONTROL_MASK	(1 << 2)
+#define VIEWPORT_BUTTON1_MASK	(1 << 8)
+#define VIEWPORT_BUTTON2_MASK	(1 << 9)
+#define VIEWPORT_BUTTON3_MASK	(1 << 10)
+
+
+void viewport_pass_node_table( GNode **new_node_table );
+void viewport_event( ViewportEventType type, int x, int y, int button, unsigned int state );
+void viewport_dolly( double dk );
+
+
+/* end viewport.h */

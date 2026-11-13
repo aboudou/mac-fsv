@@ -1,0 +1,35 @@
+# Build products (make)
+/build/
+
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+Icon?
+.Spotlight-V100
+.Trashes
+
+# Xcode / clang artifacts, should an IDE be pointed at the sources
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+*.dSYM/
+*.o
+*.d
+compile_commands.json
+.cache/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Debug captures (MACFSV_SNAPDIR) and source archives
+/snaps/
+*.tar.gz
+
+# Claude Code local settings
+.claude/settings.local.json
